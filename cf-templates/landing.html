@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<!--
+  PageForge landing page template (Mustache, rendered by Adobe's JSON2HTML service).
+  Data comes from the composer's /page/<slug> JSON. Keep this file display-only:
+  all logic (filtering, sorting, quality rules, JSON-LD) lives in the composer.
+  Structure follows Edge Delivery semantic HTML: each <div class="block-name">
+  becomes a block, each child <div> a row, each grandchild <div> a cell.
+-->
+<html>
+  <head>
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <link rel="canonical" href="{{{canonical}}}">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta name="pageforge-generated" content="{{generatedAt}}">
+    <script type="application/ld+json">{{{jsonld}}}</script>
+  </head>
+  <body>
+    <header></header>
+    <main>
+      <div>
+        <h1>{{title}}</h1>
+        {{{intro}}}
+        <p><em>{{productCount}} picks, sorted by price.</em></p>
+      </div>
+      <div>
+        <div class="product-grid">
+          {{#products}}
+          <div>
+            <div><picture><img src="{{image}}" alt="{{name}}"></picture></div>
+            <div>
+              <h3><a href="{{url}}">{{name}}</a></h3>
+              <p><strong>{{priceLabel}}</strong></p>
+            </div>
+          </div>
+          {{/products}}
+        </div>
+      </div>
+      {{#hasFaqs}}
+      <div>
+        <h2>Frequently asked questions</h2>
+        <div class="faq">
+          {{#faqs}}
+          <div>
+            <div><p>{{q}}</p></div>
+            <div><p>{{a}}</p></div>
+          </div>
+          {{/faqs}}
+        </div>
+      </div>
+      {{/hasFaqs}}
+    </main>
+    <footer></footer>
+  </body>
+</html>
