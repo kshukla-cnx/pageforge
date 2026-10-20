@@ -1,8 +1,7 @@
 /*
  * PageForge product grid.
  * Sizes follow the Figma frame: 271px cards on a 1200px canvas, 24px gutters.
- * The design uses a normal-width grotesque, so headings here take the body font
- * rather than the global condensed heading face.
+ * Typography inherits the global Poppins stack.
  */
 
 .product-grid {
@@ -37,7 +36,6 @@
 .product-grid .product-grid-intro :is(h1, h2, h3, h4, h5, h6) {
   margin: 12px 0 0;
   color: var(--product-grid-ink);
-  font-family: var(--body-font-family);
   font-size: 32px;
   font-weight: 700;
   line-height: 1.2;
@@ -165,7 +163,6 @@
 .product-grid .product-grid-title {
   margin: 0;
   color: var(--product-grid-ink);
-  font-family: var(--body-font-family);
   font-size: 26px;
   font-weight: 700;
   line-height: 1.35;
