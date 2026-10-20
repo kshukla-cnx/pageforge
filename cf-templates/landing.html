@@ -29,10 +29,16 @@
       <div>
         <h1>{{title}}</h1>
         {{{intro}}}
-        <p><em>{{productCount}} picks, sorted by price.</em></p>
       </div>
       <div>
         <div class="product-grid">
+          <div>
+            <div>
+              <p>{{categoryLabel}}</p>
+              <h2>Our picks</h2>
+              <p>{{productCount}} products in stock, sorted by price.</p>
+            </div>
+          </div>
           {{#products}}
           <div>
             <div><picture><img src="{{image}}" alt="{{name}}"></picture></div>
