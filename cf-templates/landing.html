@@ -5,6 +5,13 @@
   all logic (filtering, sorting, quality rules, JSON-LD) lives in the composer.
   Structure follows Edge Delivery semantic HTML: each <div class="block-name">
   becomes a block, each child <div> a row, each grandchild <div> a cell.
+
+  Product fields are named productDescription / productCategory, not description
+  / category: Mustache resolves an unknown key up the context stack, so a product
+  without its own description would silently inherit the page-level one used for
+  the meta tag. These names exist only on a product, so an absent value renders
+  nothing. Do not put Mustache tags inside a Mustache comment - the first closing
+  braces end the comment and the rest leaks into the page as text.
 -->
 <html>
   <head>
@@ -31,10 +38,6 @@
             <div><picture><img src="{{image}}" alt="{{name}}"></picture></div>
             <div>
               <h3><a href="{{url}}">{{name}}</a></h3>
-              {{! productDescription/productCategory are deliberately NOT named
-                  description/category: Mustache falls back up the context stack,
-                  so a product missing {{description}} would inherit the page's
-                  meta description. These names exist only on a product. }}
               {{#productDescription}}<p>{{productDescription}}</p>{{/productDescription}}
               <p><strong>{{priceLabel}}</strong></p>
             </div>
