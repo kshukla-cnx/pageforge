@@ -10,8 +10,10 @@ import { moveInstrumentation } from '../../scripts/scripts.js';
  * A leading row with a single cell is the section intro: the paragraph(s) before
  * the heading become the eyebrow, the one(s) after it the tagline.
  *
- * Category cells are optional. When two or more distinct categories are present the
- * block renders a tab list that filters the grid; with fewer, the tabs are omitted.
+ * Category cells are optional, and an empty cell counts as no category - the
+ * composer template emits <div></div> when a product has none. When two or more
+ * distinct categories are present the block renders a tab list that filters the
+ * grid; with fewer, the tabs are omitted.
  */
 
 /** Label of the tab that clears the filter. */
