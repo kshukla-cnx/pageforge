@@ -214,5 +214,53 @@
         "valueType": "string"
       }
     ]
+  },
+  {
+    "id": "product-grid-intro",
+    "fields": [
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "description": "Paragraphs before the heading render as the eyebrow, paragraphs after it as the tagline."
+      }
+    ]
+  },
+  {
+    "id": "product",
+    "fields": [
+      {
+        "component": "reference",
+        "valueType": "string",
+        "name": "image",
+        "label": "Image",
+        "multi": false
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "imageAlt",
+        "value": "",
+        "label": "Alt"
+      },
+      {
+        "component": "richtext",
+        "valueType": "string",
+        "name": "text",
+        "value": "",
+        "label": "Text",
+        "description": "Heading for the product name, a paragraph for the description and a bold paragraph for the price."
+      },
+      {
+        "component": "text",
+        "valueType": "string",
+        "name": "category",
+        "value": "",
+        "label": "Category",
+        "description": "Groups the product under a filter tab. Tabs appear once two or more categories are used."
+      }
+    ]
   }
 ]

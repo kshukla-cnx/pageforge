@@ -38,5 +38,12 @@
       "button",
       "title"
     ]
+  },
+  {
+    "id": "product-grid",
+    "components": [
+      "product-grid-intro",
+      "product"
+    ]
   }
 ]
